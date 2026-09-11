@@ -48,6 +48,7 @@ data class Person(val name: String, val age: Int)
 interface Door {
   fun open()
   fun close() = println("Closing the door")
+  // fun add(a: Int, b: Int) = a + b
 }
 
 open class House(val address: String, val numRooms: Int) {
@@ -55,12 +56,17 @@ open class House(val address: String, val numRooms: Int) {
   constructor(address: String) : this(address, 1) {
     println("Secondary constructor called for House: $address")
   }
+
+  fun add(a :Int, b :Int) = a + b
 }
 
 // sub class of our open class House
 class ColonialHouse(address: String, numRooms: Int) : House(address, numRooms), Door {
   init {
     println("ColonialHouse created: $address with $numRooms rooms.")
+
+    val sum = add(5, 10)
+    println("Sum of 5 and 10 is: $sum")
   }
   override fun open() = println("Opening the colonial house door")
 }
@@ -105,6 +111,13 @@ fun main() {
   var greeting :String? = "Hello"
   greeting = null
   println(greeting?.uppercase() ?: "Greeting is null")
+
+  var nullableName: String? = "Hendrix"                                     
+  nullableName = null // Allowed                                            
+                                                                              
+  // Direct access on nullable types is prohibited:                         
+  // val len = nullableName.length // COMPILE ERROR!
+  // println("Length of nullableName: $len") // This will print "Length of nullableName: null"
 
   val colonialHouse = ColonialHouse("789 Oak St", rooms)
   colonialHouse.open()
