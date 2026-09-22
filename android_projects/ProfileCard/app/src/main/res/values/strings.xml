@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Profile Card</string>
+    <string name="name">Alex Johnson</string>
+    <string name="title"><![CDATA[Android & Kotlin Developer]]></string>
+    <string name="bio">Passionate about modern UI, Jetpack Compose, and building clean, responsive Android experiences.</string>
+
+</resources>
