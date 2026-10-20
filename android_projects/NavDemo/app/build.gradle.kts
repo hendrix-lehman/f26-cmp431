@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+
+    kotlin("plugin.serialization")
 }
 
 android {
@@ -37,6 +39,9 @@ android {
 
 dependencies {
     implementation(libs.androidx.navigation)
+    implementation(libs.kotlinx.serialization)
+    implementation(libs.androidx.compose.material3.window.size)
+    implementation(libs.androidx.compose.material.icons)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
